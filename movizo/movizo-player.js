@@ -29105,6 +29105,10 @@
 
   class CustomFetchLoader {
 
+      static setDebug(value) {
+          LOGGER$1.enabled = value;
+      }
+
       constructor(config /* HlsConfig */) {
           if (!fetchSupported()) throw new Error('fetch is not supported in your browser');
 
@@ -30787,7 +30791,9 @@
               return null;
           }
 
-          var elem = this.createVideoElement();
+          const elem = this.createVideoElement();
+
+          CustomFetchLoader.setDebug(this.options.debug);
 
           this.hls = new Hls({
               debug: this.options.debugHlsJs,
@@ -30808,11 +30814,11 @@
           // 再生開始、再生時間更新、シーク移動、が発生した時にデータロードを再開する
           if (this.options.autoplay == false && this.options.preload == false) {
               const self = this;
-              var stopLoad = function() {
+              const stopLoad = function() {
                   self.hls.stopLoad();
                   self.hls.off(Hls.Events.FRAG_PARSED, stopLoad);
               };
-              var startLoad = () => {
+              const startLoad = () => {
                   self.hls.startLoad();
                   elem.removeEventListener('play', startLoad);
                   elem.removeEventListener('timeupdate', startLoad);
