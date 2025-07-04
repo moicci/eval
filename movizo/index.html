@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>#movizo-player-wrapper{ width:1280px; height:720px; font-size:0; }</style>
+<div id="movizo-player-wrapper"></div>
+<script type="text/javascript" src="//movie.movizo.jp/assets/1.0/player/movizo-player.min.js"></script>
+<script type="text/javascript">
+// deliveryType: 配信方法 ('streaming', 'progressive') を指定します。
+// autoplay: 表示されると同時に再生開始します。
+// loop: 再生を繰り返します。
+// controls: 再生/停止ボタンやシークバーを表示します。
+var options = {
+  "accountID": "UJA5M476",
+  "movieID": "C1WA4MN2",
+  "autoplay": false,
+  "loop": false,
+  "profileID": "HCLZI2V6",
+  "deliveryType": "streaming",
+  "controls": true
+};
+var player = new MovizoPlayer(options);
+player.attach(document.getElementById("movizo-player-wrapper"));
+</script>
+</html>
+
