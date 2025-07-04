@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>#movizo-player-wrapper{ max-width:90%; max-height:90vh; font-size:0; }</style>
+<pre>
+fillin3.
+2023-00_v6.mp4　こちらも
+3:42　で止まってしまいました。
+</pre>
+<div id="movizo-player-wrapper"></div>
+<script type="text/javascript" src="//movie.movizo.jp/assets/1.0/player/movizo-player.js?1"></script>
+<script type="text/javascript">
+var options = {
+  "accountID": "74LAPTCD",
+  "movieID": "MR4JUIC3",
+  "autoplay": false,
+  "loop": false,
+  "profileID": "1R3VXSWD",
+  "deliveryType": "streaming",
+  "controls": true
+};
+var player = new MovizoPlayer(options);
+player.attach(document.getElementById("movizo-player-wrapper"));
+</script>
+</html>
+

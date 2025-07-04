@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>#movizo-player-wrapper{ max-width:90%; max-height:90vh; font-size:0; }</style>
+<pre>
+fillin1.
+こちらでは、6:15で停止
+</pre>
+<a href="https://fillin.works/jart/01/">https://fillin.works/jart/01/</a>
+<div id="movizo-player-wrapper"></div>
+<!--
+<script type="text/javascript" src="//movie.movizo.jp/assets/1.0/player/movizo-player.js"></script>
+-->
+<script type="text/javascript" src="movizo-player.js"></script>
+<script type="text/javascript">
+// deliveryType: 配信方法 ('streaming', 'progressive') を指定します。
+// autoplay: 表示されると同時に再生開始します。
+// loop: 再生を繰り返します。
+// controls: 再生/停止ボタンやシークバーを表示します。
+var options = {
+  "accountID": "LUDMBK8P",
+  "movieID": "64WFYXS3",
+  "autoplay": false,
+  "loop": false,
+  "profileID": "28RFPX5V",
+  "deliveryType": "streaming",
+  "controls": true,
+};
+var player = new MovizoPlayer(options);
+player.attach(document.getElementById("movizo-player-wrapper"));
+</script>
+</html>
+

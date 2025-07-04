@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>#movizo-player-wrapper{ max-width:90%; max-height:90vh; font-size:0; }</style>
+<pre>
+fillin4.
+01-オンライン診療の基本的理解と諸制度_R5.mp4
+7:07で、ぐるぐるの状態になってしまいます。
+</pre>
+<div id="movizo-player-wrapper"></div>
+<script type="text/javascript" src="//movie.movizo.jp/assets/1.0/player/movizo-player.js?1"></script>
+<script type="text/javascript">
+// deliveryType: 配信方法 ('streaming', 'progressive') を指定します。
+// autoplay: 表示されると同時に再生開始します。
+// loop: 再生を繰り返します。
+// controls: 再生/停止ボタンやシークバーを表示します。
+var options = {
+  "accountID": "58ITGPV6",
+  "movieID": "BFUAJ5ZM",
+  "autoplay": false,
+  "loop": false,
+  "profileID": "A6E3Q9PW",
+  "deliveryType": "streaming",
+  "controls": true
+};
+var player = new MovizoPlayer(options);
+player.attach(document.getElementById("movizo-player-wrapper"));
+</script>
+</html>
+
