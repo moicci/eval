@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>hamberger</title>
+<svg width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>hamburger</title>
     <defs>
         <path d="M0,0 L414,0 L414,499 L0,499 L0,0 Z" id="path-1"></path>
     </defs>
@@ -8,8 +8,8 @@
         <g id="スマホ初期状態" transform="translate(-14, -62)" xlink:href="#path-1">
             <path stroke="#979797" d="M413.5,0.5 L413.5,498.5 L0.5,498.5 L0.5,0.5 L413.5,0.5 Z" stroke-linejoin="square"></path>
             <g id="header" fill-rule="evenodd" transform="translate(-2, 0)" stroke="#000000" stroke-linecap="square">
-                <g transform="translate(11, 37)" id="hamberger">
-                    <path d="M27.6206897,25.5 L6.37931034,25.5 M27.6206897,34.5 L6.37931034,34.5 M27.6206897,44.5 L6.37931034,44.5"></path>
+                <g transform="translate(11, 37)" id="hamburger">
+                    <path d="M24.3793103,25.5 L6.37931034,25.5 M24.3793103,33.0789474 L6.37931034,33.0789474 M24.3793103,41.5 L6.37931034,41.5"></path>
                 </g>
             </g>
         </g>

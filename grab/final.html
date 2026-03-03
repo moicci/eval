@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>grab</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+}
+:root {
+    --grab-border-color: #ddd;
+    --grab-announcement-height: 40px;
+    --grab-initial-header-height: 130px;
+    @media (max-width: 768px) {
+        --grab-mobile-toolbar-height: 58px;
+    }
+    @media (min-width: 768px) {
+        --grab-desktop-category-height: 81px;
+    }
+}
+.body-image {
+    display: block;
+    width: 100%;
+}
+
+.grab-border-box, .grab-border-box * {
+    box-sizing: border-box;
+}
+.grab-fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.grab-announcement {
+    height: var(--grab-announcement-height);
+    background-color: #ccc;
+    border-bottom: 1px solid var(--grab-border-color);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+.grab-header {
+    height: var(--grab-initial-header-height);
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.grab-header-border {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    height: 1px;
+    background-color: var(--grab-border-color);
+}
+.grab-main-content {
+    padding-top: calc(var(--grab-initial-header-height) + var(--grab-announcement-height) + var(--grab-mobile-toolbar-height, 0));
+}
+.grab-logo {
+    height: 90px;
+}
+.grab-header_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+.grab-header_text div {
+    text-decoration: underline;
+}
+
+.grab-mobile-toolbar {
+    display: none;
+}
+.grab-mobile-top-category {
+    display: none;
+}
+.grab-desktop-top-category {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .grab-mobile-toolbar {
+        height: var(--grab-toolbar-height);
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10%;
+        background-color: white;
+    }
+    .grab-mobile-toolbar.with-border {
+        border-bottom: 1px solid var(--grab-border-color);
+    }
+    .grab-mobile-toolbar .grab-mobile-toolbar_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+    .grab-mobile-toolbar .grab-mobile-toolbar_item .grab-mobile-toolbar_item_icon {
+        height: 18px;
+    }
+    .grab-mobile-toolbar .grab-mobile-toolbar_item .grab-mobile-toolbar_item_text {
+        font-size: 10px;
+    }
+    .grab-mobile-top-category {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        padding-bottom: 1rem;
+    }
+    .grab-mobile-top-category .grab-mobile-category-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 1rem;
+        width: 80%;
+        border: 2px solid black;
+    }
+    .grab-mobile-top-category .grab-mobile-top-category_item {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+@media (min-width: 768px) {
+    .grab-desktop-top-category {
+        height: var(--grab-desktop-category-height);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        border: 2px solid black;
+        background-color: black;
+        color: white;
+        padding: 1.5rem;
+        width: 100%;
+        font-size: 1.2rem;
+    }
+}
+</style>
+
+</head>
+<body>
+<div class="grab-fixed-header grab-border-box">
+    <div class="grab-announcement">会員登録ですぐ使える500円分のポイントGET</div>
+    <div class="grab-header">
+        <img class="grab-hamburger" src="assets/hamburger.svg" alt="grab-header">
+        <img class="grab-logo" src="assets/grab_logo.avif" alt="grab-header_logo">
+        <div class="grab-header_text">
+            <div class="grab-header_signup">会員登録</div>
+            <div class="grab-header_login">ログイン</div>
+        </div>
+        <div class="grab-header-border"></div>
+    </div>
+    <div class="grab-mobile-toolbar">
+        <div class="grab-mobile-toolbar_item">
+            <img class="grab-mobile-toolbar_item_icon" src="assets/icon_tshirt.svg" alt="home">
+            <div class="grab-mobile-toolbar_item_text">NEW ARRIVAL</div>
+        </div>
+        <div class="grab-mobile-toolbar_item">
+            <img class="grab-mobile-toolbar_item_icon" src="assets/icon_category.svg" alt="search">
+            <div class="grab-mobile-toolbar_item_text">CATEGORY</div>
+        </div>
+        <div class="grab-mobile-toolbar_item">
+            <img class="grab-mobile-toolbar_item_icon" src="assets/icon_search.svg" alt="search">
+            <div class="grab-mobile-toolbar_item_text">SEARCH</div>
+        </div>
+        <div class="grab-mobile-toolbar_item">
+            <img class="grab-mobile-toolbar_item_icon" src="assets/icon_cart2.svg" alt="search">
+            <div class="grab-mobile-toolbar_item_text">CART</div>
+        </div>
+    </div>
+    <div class="grab-desktop-top-category">
+        <div class="grab-desktop-top-category_item">MENS</div>
+        <div class="grab-desktop-top-category_item">LADIES</div>
+        <div class="grab-desktop-top-category_item">KIDS</div>
+        <div class="grab-desktop-top-category_item">VINTAGE</div>
+        <div class="grab-desktop-top-category_item">GOOD REGULAR</div>
+        <div class="grab-desktop-top-category_item">ALL ITEMS</div>
+        <div class="grab-desktop-top-category_item">BRAND</div>
+    </div>
+</div>
+
+<div class="grab-main-content grab-border-box"></div>
+
+<div class="grab-mobile-top-category grab-border-box">
+    <div class="grab-mobile-category-wrapper">
+        <div class="grab-mobile-top-category_item">MENS</div>
+        <div class="grab-mobile-top-category_item">LADIES</div>
+        <div class="grab-mobile-top-category_item">KIDS</div>
+    </div>
+</div>
+
+<img class="body-image" src="assets/body.png" alt="carousel">
+
+<script>
+(() => {
+    const announcement = document.querySelector('.grab-announcement');
+    const header = document.querySelector('.grab-header');
+    const logo = document.querySelector('.grab-logo');
+    const headerText = document.querySelector('.grab-header_text');
+
+    // スマホのツールバー
+    let mobileToolbar = document.querySelector('.grab-mobile-toolbar');
+    const mobileToolbarHeight = mobileToolbar.offsetHeight;
+    if (mobileToolbarHeight < 1) mobileToolbar = undefined;
+    
+    // デスクトップのトップカテゴリ
+    let desktopTopCategory = document.querySelector('.grab-desktop-top-category');
+    const desktopTopCategoryHeight = desktopTopCategory.offsetHeight;
+    if (desktopTopCategoryHeight < 1) desktopTopCategory = undefined;
+
+    const announcementHeight = announcement.offsetHeight;
+    const initialHeaderHeight = header.offsetHeight;
+    const SCROLL_THRESHOLD = initialHeaderHeight + mobileToolbarHeight + desktopTopCategoryHeight + announcementHeight;
+
+    // ヘッダの縦方向のパディング
+    const PADDING_BLOCK_INIT = 20;
+    const PADDING_BLOCK_MIN = 10;
+
+    // ロゴの高さ
+    const LOGO_HEIGHT_INIT = 90;
+    const LOGO_HEIGHT_MIN = 45;
+
+    const updateHeader = () => {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const progress = Math.min(scrollY / SCROLL_THRESHOLD, 1);
+
+        const logoHeight = LOGO_HEIGHT_INIT - (LOGO_HEIGHT_INIT - LOGO_HEIGHT_MIN) * progress;
+        logo.style.height = logoHeight + 'px';
+
+        // ヘッダの縦方向のパディング
+        const paddingBlock = PADDING_BLOCK_INIT - (PADDING_BLOCK_INIT - PADDING_BLOCK_MIN) * progress;
+        header.style.paddingBlock = paddingBlock + 'px';
+        header.style.paddingInline = '20px';
+        header.style.height = 'unset'
+        
+        const headerBottom = announcementHeight + header.offsetHeight;
+
+        // デスクトップのトップカテゴリ
+        if (desktopTopCategoryHeight) {
+            desktopTopCategory.style.top = headerBottom + 'px';
+            desktopTopCategory.style.position = 'fixed';
+        }
+
+        // スマホのツールバー
+        if (mobileToolbar) {
+            const STUCK_THRESHOLD = 5;
+            const toolbarRect = mobileToolbar.getBoundingClientRect();
+            const isStuck = Math.abs(toolbarRect.top - headerBottom) < STUCK_THRESHOLD && progress > 0.95;
+            mobileToolbar.classList.toggle('with-border', isStuck);
+        }
+    };
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+})();
+</script>
+
+</body>
+</html>
