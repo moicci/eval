@@ -13,7 +13,7 @@ body {
 :root {
     --grab-border-color: #ddd;
     --grab-announcement-height: 40px;
-    --grab-initial-header-height: 128px;
+    --grab-initial-header-height: 130px;
     @media (max-width: 768px) {
         --grab-mobile-toolbar-height: 58px;
     }
@@ -73,7 +73,7 @@ body {
     width: 30px;
 }
 .grab-logo {
-    width: 180px;
+    height: 90px;
 }
 .grab-header_text {
     display: flex;
@@ -149,7 +149,6 @@ body {
 @media (min-width: 768px) {
     .grab-desktop-top-category {
         height: var(--grab-desktop-category-height);
-        position: fixed;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -217,9 +216,6 @@ body {
 </div>
 <script>
 (() => {
-    const LOGO_WIDTH_INIT = 180;
-    const LOGO_WIDTH_MIN = 90;
-
     const announcement = document.querySelector('.grab-announcement');
     const header = document.querySelector('.grab-header');
     const logo = document.querySelector('.grab-logo');
@@ -234,7 +230,6 @@ body {
     let desktopTopCategory = document.querySelector('.grab-desktop-top-category');
     const desktopTopCategoryHeight = desktopTopCategory.offsetHeight;
     if (desktopTopCategoryHeight < 1) desktopTopCategory = undefined;
-console.log(`desktopTopCategoryHeight=${desktopTopCategoryHeight}`);
 
     const announcementHeight = announcement.offsetHeight;
     const initialHeaderHeight = header.offsetHeight;
@@ -244,12 +239,16 @@ console.log(`desktopTopCategoryHeight=${desktopTopCategoryHeight}`);
     const PADDING_BLOCK_INIT = 20;
     const PADDING_BLOCK_MIN = 10;
 
+    // ロゴの高さ
+    const LOGO_HEIGHT_INIT = 90;
+    const LOGO_HEIGHT_MIN = 45;
+
     const updateHeader = () => {
         const scrollY = window.scrollY || window.pageYOffset;
         const progress = Math.min(scrollY / SCROLL_THRESHOLD, 1);
 
-        const logoWidth = LOGO_WIDTH_INIT - (LOGO_WIDTH_INIT - LOGO_WIDTH_MIN) * progress;
-        logo.style.width = logoWidth + 'px';
+        const logoHeight = LOGO_HEIGHT_INIT - (LOGO_HEIGHT_INIT - LOGO_HEIGHT_MIN) * progress;
+        logo.style.height = logoHeight + 'px';
 
         // ヘッダの縦方向のパディング
         const paddingBlock = PADDING_BLOCK_INIT - (PADDING_BLOCK_INIT - PADDING_BLOCK_MIN) * progress;
@@ -262,6 +261,7 @@ console.log(`desktopTopCategoryHeight=${desktopTopCategoryHeight}`);
         // デスクトップのトップカテゴリ
         if (desktopTopCategoryHeight) {
             desktopTopCategory.style.top = headerBottom + 'px';
+            desktopTopCategory.style.position = 'fixed';
         }
 
         // スマホのツールバー

@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "NotificationApp",
+    "slug": "NotificationApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bylomedia.notificationapp2024",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIBackgroundModes": ["background-fetch", "background-processing", "fetch"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.notificationapp.android"
+    },
+    "plugins": [
+      "expo-notifications",
+      "expo-background-fetch",
+      "expo-task-manager"
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e5d0b6e5-073d-45fd-a280-5b298ed3b422"
+      }
+    },
+    "owner": "moicci"
+  }
+}

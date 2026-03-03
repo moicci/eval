@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx react-native init:*)",
+      "Bash(npx @react-native-community/cli init:*)",
+      "Bash(yarn create:*)",
+      "Bash(ls:*)",
+      "Bash(yarn add:*)",
+      "Bash(yarn remove:*)",
+      "Bash(yarn ios)",
+      "Bash(yarn:*)",
+      "Bash(npm install:*)",
+      "Bash(eas:*)",
+      "Bash(/Users/fukuda/.volta/tools/image/node/22.14.0/bin/eas build --platform ios)",
+      "Bash(/Users/fukuda/.volta/tools/image/node/22.14.0/bin/eas project:init)",
+      "Bash(/Users/fukuda/.volta/tools/image/node/22.14.0/bin/eas build --platform ios --profile development)"
+    ],
+    "deny": []
+  }
+}
