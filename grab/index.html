@@ -270,7 +270,7 @@ body {
 
             const STUCK_THRESHOLD = 5;
             const toolbarRect = mobileToolbar.getBoundingClientRect();
-            const isStuck = Math.abs(toolbarRect.top - headerBottom) < STUCK_THRESHOLD;
+            const isStuck = Math.abs(toolbarRect.top - headerBottom) < STUCK_THRESHOLD && progress > 0.95;
             mobileToolbar.classList.toggle('with-border', isStuck);
         }
     };
